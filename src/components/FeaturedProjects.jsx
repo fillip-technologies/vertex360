@@ -92,12 +92,12 @@ export default function FeaturedProjects() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-violet-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <span className="text-xs font-extrabold tracking-widest text-indigo-600 uppercase mb-3 block">
+          {/* <span className="text-xs font-extrabold tracking-widest text-indigo-600 uppercase mb-3 block">
             Section 4 – Featured Projects
-          </span>
+          </span> */}
           <h2 className="font-outfit text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-6">
             Featured Projects
           </h2>
@@ -211,11 +211,10 @@ export default function FeaturedProjects() {
                         <button
                           key={tab}
                           onClick={() => handleTabChange(project.id, tab)}
-                          className={`pb-2 text-[10px] font-bold uppercase tracking-wider transition-all border-b-2 cursor-pointer ${
-                            activeTab === tab
+                          className={`pb-2 text-[10px] font-bold uppercase tracking-wider transition-all border-b-2 cursor-pointer ${activeTab === tab
                               ? 'border-indigo-650 text-indigo-650'
                               : 'border-transparent text-slate-400 hover:text-slate-600'
-                          }`}
+                            }`}
                         >
                           {tab}
                         </button>
@@ -294,11 +293,10 @@ export default function FeaturedProjects() {
                         <button
                           key={tab}
                           onClick={() => handleTabChange(project.id, tab)}
-                          className={`pb-2 text-[10px] font-bold uppercase tracking-wider transition-all border-b-2 cursor-pointer ${
-                            activeTab === tab
+                          className={`pb-2 text-[10px] font-bold uppercase tracking-wider transition-all border-b-2 cursor-pointer ${activeTab === tab
                               ? 'border-indigo-650 text-indigo-650'
                               : 'border-transparent text-slate-400 hover:text-slate-600'
-                          }`}
+                            }`}
                         >
                           {tab}
                         </button>
