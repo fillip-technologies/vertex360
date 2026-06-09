@@ -1,5 +1,11 @@
 import { Sparkles, Megaphone, Store, Globe, Film, Award, ArrowRight } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import imgExperiential from '../assets/images/services_experiential.png'
+import imgActivations from '../assets/images/services_brand_activations.png'
+import imgExhibitions from '../assets/images/services_exhibition_stall.png'
+import imgDigital from '../assets/images/services_digital_hybrid.png'
+import imgContent from '../assets/images/services_short_films.png'
+import imgMice from '../assets/images/services_mice_travel.png'
 
 export default function WhatWeDo() {
   const navigate = useNavigate()
@@ -8,68 +14,56 @@ export default function WhatWeDo() {
     {
       id: 1,
       title: 'Experiential & Events',
-      description:
-        'Bring ideas to life with impactful conferences, summits, and celebrations. We design seamless end-to-end event experiences that engage audiences, strengthen brands, and deliver measurable business results.',
       icon: Sparkles,
-      gradient: 'from-pink-500/5 via-violet-500/2 to-transparent',
-      borderColor: 'group-hover:border-pink-500/20',
-      iconColor: 'text-pink-400 bg-pink-950/40 border-pink-900/30',
+      image: imgExperiential,
+      glowGrad: 'from-pink-600/40 via-violet-600/20 to-transparent',
       to: '/services/experiential',
+      colSpan: 'md:col-span-2',
     },
     {
       id: 2,
       title: 'Brand Activations & Roadshows',
-      description:
-        'Take your brand directly to your audience. Our high-energy activations and multi-city roadshows build awareness, generate buzz, and create lasting impressions that drive loyalty and sales.',
       icon: Megaphone,
-      gradient: 'from-amber-500/5 via-orange-500/2 to-transparent',
-      borderColor: 'group-hover:border-amber-500/20',
-      iconColor: 'text-amber-400 bg-amber-950/40 border-amber-900/30',
+      image: imgActivations,
+      glowGrad: 'from-amber-600/40 via-orange-600/20 to-transparent',
       to: '/services/activations',
+      colSpan: 'md:col-span-1',
     },
     {
       id: 3,
       title: 'Exhibitions & Retail Experiences',
-      description:
-        'Stand out with immersive exhibition stalls, pop-ups, and retail takeovers. From creative design to flawless execution, we ensure your brand captures attention and converts visitors into customers.',
       icon: Store,
-      gradient: 'from-emerald-500/5 via-teal-500/2 to-transparent',
-      borderColor: 'group-hover:border-emerald-500/20',
-      iconColor: 'text-emerald-400 bg-emerald-950/40 border-emerald-900/30',
+      image: imgExhibitions,
+      glowGrad: 'from-emerald-600/40 via-teal-600/20 to-transparent',
       to: '/services/exhibitions',
+      colSpan: 'md:col-span-1',
     },
     {
       id: 4,
-      title: 'Digital/Hybrid Experiences',
-      description:
-        'Bridge the gap between physical and digital. We produce hybrid events, webinars, and virtual showcases that maximize reach, boost interactivity, and keep your audiences engaged anywhere in the world.',
+      title: 'Digital & Hybrid Events',
       icon: Globe,
-      gradient: 'from-blue-500/5 via-indigo-500/2 to-transparent',
-      borderColor: 'group-hover:border-blue-500/20',
-      iconColor: 'text-blue-400 bg-blue-950/40 border-blue-900/30',
+      image: imgDigital,
+      glowGrad: 'from-blue-600/40 via-indigo-600/20 to-transparent',
       to: '/services/digital',
+      colSpan: 'md:col-span-2',
     },
     {
       id: 5,
-      title: 'Content & Films',
-      description:
-        'Every great experience deserves a great story. From event films and brand videos to social media content, we craft compelling visuals that amplify your reach and extend impact beyond the event.',
+      title: 'Content & Films Production',
       icon: Film,
-      gradient: 'from-purple-500/5 via-fuchsia-500/2 to-transparent',
-      borderColor: 'group-hover:border-purple-500/20',
-      iconColor: 'text-purple-400 bg-purple-950/40 border-purple-900/30',
+      image: imgContent,
+      glowGrad: 'from-purple-600/40 via-fuchsia-600/20 to-transparent',
       to: '/services/content',
+      colSpan: 'md:col-span-2',
     },
     {
       id: 6,
-      title: 'MICE & IPs',
-      description:
-        'Transform meetings, incentives, conferences, and exhibitions into unforgettable journeys. We also build proprietary IPs that create annual communities and unlock new revenue streams for your brand.',
+      title: 'MICE & Intellectual Properties',
       icon: Award,
-      gradient: 'from-indigo-500/5 via-cyan-500/2 to-transparent',
-      borderColor: 'group-hover:border-indigo-500/20',
-      iconColor: 'text-indigo-400 bg-indigo-950/40 border-indigo-900/30',
+      image: imgMice,
+      glowGrad: 'from-indigo-600/40 via-cyan-600/20 to-transparent',
       to: '/services/mice',
+      colSpan: 'md:col-span-1',
     },
   ]
 
@@ -79,73 +73,82 @@ export default function WhatWeDo() {
   }
 
   return (
-    <section id="what-wedo" className="pt-24 pb-8 sm:pt-32 sm:pb-12 bg-slate-950 relative overflow-hidden">
+    <section id="what-wedo" className="pt-16 pb-16 sm:pt-20 sm:pb-20 bg-slate-50 relative overflow-hidden border-b border-slate-200">
       {/* Background radial glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-500/2 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-violet-500/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-base font-semibold tracking-wider text-indigo-500 uppercase mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs font-extrabold tracking-widest text-indigo-600 uppercase mb-3 block">
             Expertise & Capabilities
-          </h2>
-          <p className="font-outfit text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
+          </span>
+          <h2 className="font-outfit text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             What We Do
-          </p>
-          <div className="h-1.5 w-24 bg-gradient-to-r from-indigo-500 to-violet-500 mx-auto rounded-full mb-6" />
-          <h3 className="font-outfit text-lg sm:text-xl font-bold text-slate-200 mb-4 max-w-2xl mx-auto">
-            We are Good at Marketing & <br className="sm:hidden" /> Better at Integrated Marketing
-          </h3>
-          <p className="font-inter text-slate-400 text-sm sm:text-base leading-relaxed font-light">
-            A 360° experiential marketing and event management agency, delivering integrated brand experiences since 2009. We take your vision and build a custom ecosystem designed to achieve scale, engagement, and conversion.
-          </p>
+          </h2>
+          <div className="h-1.5 w-24 bg-gradient-to-r from-indigo-500 to-violet-500 mx-auto rounded-full" />
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Premium Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service) => {
             const Icon = service.icon
+
             return (
               <div
                 key={service.id}
                 onClick={() => handleServiceClick(service.to)}
-                className={`group relative bg-slate-900/40 border border-slate-800 hover:border-indigo-500/35 rounded-3xl p-8 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[0_12px_32px_rgba(0,0,0,0.3)] overflow-hidden cursor-pointer`}
+                className={`group relative h-[260px] sm:h-[320px] rounded-[28px] overflow-hidden border border-slate-200/80 shadow-lg hover:border-slate-350 transition-all duration-500 hover:shadow-2xl cursor-pointer ${service.colSpan}`}
               >
-                {/* Background glow gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
+                {/* Background Image */}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover brightness-[0.70] saturate-[0.85] group-hover:brightness-[0.75] group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
                 />
 
-                {/* Content */}
-                <div className="relative z-10 flex flex-col h-full justify-between">
-                  <div>
-                    <div
-                      className={`inline-flex items-center justify-center p-4 rounded-2xl border ${service.iconColor} group-hover:scale-110 transition-transform duration-300 shadow-md mb-6`}
-                    >
-                      <Icon className="h-6 w-6" />
+                {/* Dark Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent transition-opacity duration-300" />
+                
+                {/* Active Hover Glow Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-tr ${service.glowGrad} opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay`} />
+
+                {/* Content Overlay */}
+                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-between z-10 select-none">
+                  
+                  {/* Top Row: Index and Icon */}
+                  <div className="flex items-start justify-between w-full">
+                    <span className="font-outfit text-sm font-extrabold text-white/50 tracking-wider">
+                      0{service.id}
+                    </span>
+                    
+                    <div className="p-2.5 rounded-2xl bg-white/10 border border-white/15 text-white/90 group-hover:text-white group-hover:bg-white/20 group-hover:border-white/25 transition-all duration-300">
+                      <Icon className="h-5 w-5" />
                     </div>
+                  </div>
 
-                    <h4 className="font-outfit text-xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">
+                  {/* Bottom Row: Topic Title and Arrow */}
+                  <div className="flex items-end justify-between w-full gap-4">
+                    <h3 className="font-outfit text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight tracking-tight group-hover:text-white/95 transition-colors">
                       {service.title}
-                    </h4>
-
-                    <p className="font-inter text-slate-450 text-xs sm:text-sm leading-relaxed transition-colors font-light mb-6">
-                      {service.description}
-                    </p>
+                    </h3>
+                    
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white/90 group-hover:border-white/40 group-hover:bg-white/20 group-hover:translate-x-1.5 transition-all duration-300">
+                      <ArrowRight className="h-4.5 w-4.5" />
+                    </div>
                   </div>
 
-                  {/* Read More link indicator */}
-                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 group-hover:text-indigo-300 group-hover:translate-x-1 transition-all mt-auto duration-300">
-                    Explore Details
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </div>
                 </div>
               </div>
             )
           })}
         </div>
+
       </div>
     </section>
   )
 }
+
+

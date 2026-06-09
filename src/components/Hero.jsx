@@ -1,6 +1,6 @@
 import { Compass, Calendar, Globe, Users, Award, MapPin } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import heroBg from '../assets/images/home-image3.png'
+import heroBg from '../assets/images/hero-bg.png'
 
 export default function Hero() {
   const navigate = useNavigate()
@@ -31,16 +31,16 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[780px] lg:h-screen w-full flex flex-col justify-between bg-slate-950 pt-28 pb-8 bg-cover bg-center overflow-hidden"
+      className="relative min-h-[780px] lg:h-screen w-full flex flex-col justify-between bg-slate-950 pt-36 sm:pt-40 lg:pt-28 pb-8 bg-cover bg-[position:70%_center] lg:bg-center overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(to right, rgba(2, 6, 23, 0.45) 15%, rgba(2, 6, 23, 0.05) 55%, rgba(2, 6, 23, 0.2) 100%), url(${heroBg})`,
+        backgroundImage: `linear-gradient(to right, rgba(2, 6, 23, 0.75) 15%, rgba(2, 6, 23, 0.35) 65%, rgba(2, 6, 23, 0.5) 100%), url(${heroBg})`,
       }}
     >
       {/* Background glow overlay */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-brand-gold/2 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Main Content Area */}
-      <div className="flex-grow flex items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-52 lg:pb-48">
+      <div className="flex-grow flex items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-8 lg:pb-48">
         <div className="w-full flex flex-col items-start text-left mt-8 sm:mt-12">
 
           {/* Logo Branding Stack */}
@@ -49,11 +49,11 @@ export default function Hero() {
             <span className="text-base font-bold tracking-[0.2em] text-white leading-none">VERTEX360°</span>
             <span className="text-[8px] font-semibold tracking-[0.35em] text-slate-300 mt-1 uppercase">EXPERIENCES</span>
             <div className="w-full h-[1px] bg-brand-gold/30 my-2" />
-            <span className="text-[7px] font-bold tracking-[0.3em] text-brand-gold uppercase">A Unit of SAV Production</span>
+            <span className="text-[7px] font-bold tracking-[0.3em] text-brand-gold uppercase">A unit of SAV production private limited</span>
           </div>
 
           {/* Main Tagline */}
-          <h1 className="font-outfit text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 max-w-4xl">
+          <h1 className="font-outfit text-3xl sm:text-6xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-4 max-w-4xl">
             Creating Experiences. <br />
             <span className="text-brand-gold bg-clip-text">Delivering Excellence.</span>
           </h1>
@@ -95,7 +95,7 @@ export default function Hero() {
       </div>
 
       {/* Stats Bar Container (Sits at the bottom of section) */}
-      <div className="absolute bottom-12 sm:bottom-16 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-20">
+      <div className="relative mt-12 mb-6 mx-auto w-[92%] max-w-7xl z-20 lg:absolute lg:bottom-12 lg:left-1/2 lg:-translate-x-1/2 lg:mt-0 lg:mb-0">
         <div className="w-full bg-slate-950/70 border border-slate-900/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/40 to-transparent pointer-events-none" />
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 relative z-10">

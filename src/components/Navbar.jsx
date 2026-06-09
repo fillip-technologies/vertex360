@@ -107,8 +107,8 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-black py-3 px-6 sm:px-12 border-b border-slate-900/60 shadow-lg shadow-black/20'
-        : 'bg-black/55 backdrop-blur-xs py-5 px-6 sm:px-12 border-b border-transparent'
+        ? 'bg-white/95 backdrop-blur-md py-2.5 px-4 sm:px-12 border-b border-slate-200 shadow-md shadow-slate-100/20'
+        : 'bg-transparent py-4 px-4 sm:px-12 border-b border-transparent'
         }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
@@ -120,9 +120,9 @@ export default function Navbar() {
             className="flex items-center gap-3 group"
           >
             {/* Logo Image */}
-            <div className={`relative transition-all duration-300 ${isScrolled ? 'h-9 sm:h-10' : 'h-13 sm:h-15'}`}>
+            <div className={`relative transition-all duration-300 ${isScrolled ? 'h-8 sm:h-10' : 'h-10 sm:h-15'}`}>
               <Logo
-                className="h-full w-auto object-contain transition-all duration-300 group-hover:scale-103"
+                className={`h-full w-auto object-contain transition-all duration-300 group-hover:scale-103 ${isScrolled ? 'brightness-0' : ''}`}
                 src={logoImg}
                 alt="Vertex 360 Logo"
               />
@@ -148,25 +148,25 @@ export default function Navbar() {
                     onClick={(e) => handleNavClick(e, link)}
                     className={`relative py-2 text-sm font-medium tracking-wide transition-all duration-300 flex items-center gap-1.5 cursor-pointer
                       ${active
-                        ? 'text-white font-semibold'
-                        : 'text-slate-300 hover:text-white'
+                        ? isScrolled ? 'text-indigo-650 font-bold' : 'text-white font-semibold'
+                        : isScrolled ? 'text-slate-700 hover:text-indigo-650' : 'text-slate-300 hover:text-white'
                       }`}
                   >
                     {link.name}
                     <ChevronDown className={`h-3.5 w-3.5 opacity-80 transition-transform duration-300 ${isServicesHovered ? 'rotate-180' : ''}`} />
                     {/* Active indicator line */}
                     <span
-                      className={`absolute bottom-[-2px] left-0 right-0 h-[2px] bg-white transition-all duration-300 origin-center ${active
+                      className={`absolute bottom-[-2px] left-0 right-0 h-[2px] transition-all duration-300 origin-center ${active
                         ? 'scale-x-100 opacity-100'
                         : 'scale-x-0 opacity-0 group-hover/dropdown:scale-x-100 group-hover/dropdown:opacity-100'
-                        }`}
+                        } ${isScrolled ? 'bg-indigo-650' : 'bg-white'}`}
                     />
                   </a>
 
                   {/* Dropdown Menu Card */}
                   <div
-                    className={`absolute left-0 mt-2 w-72 bg-black border border-slate-900 rounded-2xl shadow-2xl py-3 z-50 transition-all duration-300 origin-top transform ${isServicesHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
-                      }`}
+                    className={`absolute left-0 mt-2 w-72 border rounded-2xl shadow-2xl py-3 z-50 transition-all duration-300 origin-top transform ${isServicesHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+                      } ${isScrolled ? 'bg-white border-slate-200 text-slate-800 shadow-slate-100/40' : 'bg-black border-slate-900 text-slate-300 shadow-black/80'}`}
                   >
                     {dropdownItems.map((item) => (
                       <a
@@ -178,7 +178,7 @@ export default function Navbar() {
                           navigate(item.to)
                           window.scrollTo({ top: 0, behavior: 'smooth' })
                         }}
-                        className="block px-5 py-3 text-xs sm:text-sm text-slate-300 hover:text-white hover:bg-slate-900 transition-colors font-medium"
+                        className={`block px-5 py-3 text-xs sm:text-sm transition-colors font-medium ${isScrolled ? 'hover:bg-slate-50 hover:text-indigo-650 text-slate-700' : 'hover:bg-slate-900 hover:text-white text-slate-300'}`}
                       >
                         {item.name}
                       </a>
@@ -195,17 +195,17 @@ export default function Navbar() {
                 onClick={(e) => handleNavClick(e, link)}
                 className={`relative py-2 text-sm font-medium tracking-wide transition-all duration-300 flex items-center gap-1.5 group
                   ${active
-                    ? 'text-white font-semibold'
-                    : 'text-slate-300 hover:text-white'
+                    ? isScrolled ? 'text-indigo-650 font-bold' : 'text-white font-semibold'
+                    : isScrolled ? 'text-slate-700 hover:text-indigo-650' : 'text-slate-300 hover:text-white'
                   }`}
               >
                 {link.name}
                 {/* Active indicator line */}
                 <span
-                  className={`absolute bottom-[-2px] left-0 right-0 h-[2px] bg-white transition-all duration-300 origin-center ${active
+                  className={`absolute bottom-[-2px] left-0 right-0 h-[2px] transition-all duration-300 origin-center ${active
                     ? 'scale-x-100 opacity-100'
                     : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
-                    }`}
+                    } ${isScrolled ? 'bg-indigo-650' : 'bg-white'}`}
                 />
               </a>
             )
@@ -217,7 +217,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             type="button"
-            className="inline-flex items-center justify-center p-2 rounded-xl text-slate-300 hover:text-white focus:outline-none transition-all duration-200"
+            className={`inline-flex items-center justify-center p-2 rounded-xl focus:outline-none transition-all duration-200 ${isScrolled ? 'text-slate-750 hover:text-slate-900' : 'text-slate-300 hover:text-white'}`}
             aria-controls="mobile-menu"
             aria-expanded={isMobileMenuOpen}
           >
@@ -233,10 +233,10 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown Card */}
       <div
-        className={`md:hidden absolute left-0 right-0 mt-3 mx-3 backdrop-blur-xl border border-slate-800/80 shadow-2xl rounded-2xl p-6 transition-all duration-300 origin-top transform ${isMobileMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+        className={`md:hidden absolute left-0 right-0 mt-3 mx-3 backdrop-blur-xl border shadow-2xl rounded-2xl p-6 transition-all duration-300 origin-top transform ${isMobileMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
           } ${isScrolled
-            ? 'bg-black/95 border-slate-900 shadow-black/25'
-            : 'bg-slate-950/95 border-slate-800/80 shadow-black/50'
+            ? 'bg-white/95 border-slate-200 shadow-slate-100/40 text-slate-900'
+            : 'bg-slate-950/95 border-slate-800/80 shadow-black/50 text-slate-300'
           }`}
       >
         <div className="space-y-1 flex flex-col">
@@ -254,8 +254,8 @@ export default function Navbar() {
                 }}
                 className={`px-4 py-3 rounded-xl text-md font-semibold transition-all duration-200 flex items-center justify-between
                   ${isActive(link) && link.to === location.pathname
-                    ? 'text-white bg-slate-900'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-900/60'
+                    ? isScrolled ? 'text-indigo-650 bg-slate-50' : 'text-white bg-slate-900'
+                    : isScrolled ? 'text-slate-700 hover:text-indigo-650 hover:bg-slate-50' : 'text-slate-300 hover:text-white hover:bg-slate-900/60'
                   }`}
               >
                 {link.name}
@@ -264,7 +264,7 @@ export default function Navbar() {
                 )}
               </a>
               {link.hasDropdown && isMobileServicesOpen && (
-                <div className="pl-6 space-y-1 mt-1 border-l border-slate-800 ml-4">
+                <div className={`pl-6 space-y-1 mt-1 border-l ml-4 ${isScrolled ? 'border-slate-200' : 'border-slate-800'}`}>
                   {dropdownItems.map((subLink) => (
                     <a
                       key={subLink.name}
@@ -275,7 +275,7 @@ export default function Navbar() {
                         navigate(subLink.to)
                         window.scrollTo({ top: 0, behavior: 'smooth' })
                       }}
-                      className="block px-4 py-2.5 text-sm text-slate-400 hover:text-white hover:bg-slate-900/60 rounded-lg transition-all"
+                      className={`block px-4 py-2.5 text-sm rounded-lg transition-all ${isScrolled ? 'text-slate-600 hover:text-indigo-650 hover:bg-slate-50' : 'text-slate-400 hover:text-white hover:bg-slate-900/60'}`}
                     >
                       {subLink.name}
                     </a>

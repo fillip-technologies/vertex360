@@ -51,22 +51,22 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="py-20 sm:py-28 bg-slate-950 border-t border-slate-900 relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-slate-50 border-t border-slate-200 relative overflow-hidden">
       {/* Glow backgrounds */}
-      <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-violet-500/2 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-indigo-500/2 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-violet-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <span className="text-xs font-extrabold tracking-widest text-indigo-400 uppercase mb-3.5 block">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span className="text-xs font-extrabold tracking-widest text-indigo-650 uppercase mb-3.5 block">
             Testimonials
           </span>
-          <h2 className="font-outfit text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+          <h2 className="font-outfit text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
             What Our Clients Say
           </h2>
-          <p className="font-inter text-slate-400 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="font-inter text-slate-600 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
             Read stories of how we partnered with industry leaders to bring creative event storytelling and operational precision to life.
           </p>
           <div className="h-1.5 w-20 bg-gradient-to-r from-indigo-500 to-violet-500 mx-auto rounded-full mt-6" />
@@ -77,12 +77,12 @@ export default function Testimonials() {
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className={`group relative bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/30 hover:bg-slate-900/60 rounded-3xl p-8 sm:p-10 transition-all duration-300 shadow-sm flex flex-col justify-between overflow-hidden hover:translate-y-[-4px] hover:shadow-lg ${
+              className={`group relative bg-white border border-slate-200 hover:border-indigo-500/30 hover:bg-slate-50/10 rounded-3xl p-8 sm:p-10 transition-all duration-300 shadow-sm flex flex-col justify-between overflow-hidden hover:translate-y-[-4px] hover:shadow-md ${
                 idx === 3 ? 'lg:col-span-2' : ''
               }`}
             >
               {/* Background Quote Icon for Aesthetics */}
-              <div className="absolute top-6 right-6 text-slate-800/20 group-hover:text-indigo-500/10 transition-colors pointer-events-none">
+              <div className="absolute top-6 right-6 text-slate-100 group-hover:text-indigo-500/5 transition-colors pointer-events-none">
                 <Quote className="h-12 w-12 transform rotate-180" />
               </div>
 
@@ -95,23 +95,23 @@ export default function Testimonials() {
                 </div>
 
                 {/* Testimonial Quote */}
-                <p className="font-inter text-slate-300 text-sm sm:text-base font-light italic leading-relaxed mb-8">
+                <p className="font-inter text-slate-700 text-sm sm:text-base font-light italic leading-relaxed mb-8">
                   "{t.text}"
                 </p>
               </div>
 
               {/* Author Info */}
-              <div className="relative z-10 flex items-center gap-4 pt-6 border-t border-slate-800/60 mt-auto">
+              <div className="relative z-10 flex items-center gap-4 pt-6 border-t border-slate-150 mt-auto">
                 {/* Initials Circle */}
                 <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-sm font-bold text-white shadow-inner flex-shrink-0`}>
                   {t.initials}
                 </div>
                 <div>
-                  <h4 className="font-outfit text-sm sm:text-base font-bold text-white group-hover:text-indigo-400 transition-colors leading-tight">
+                  <h4 className="font-outfit text-sm sm:text-base font-bold text-slate-900 group-hover:text-indigo-650 transition-colors leading-tight">
                     {t.name}
                   </h4>
-                  <p className="font-inter text-[11px] sm:text-xs text-slate-400 mt-1 font-medium">
-                    {t.role}, <span className="text-slate-300 font-semibold">{t.company}</span>
+                  <p className="font-inter text-[11px] sm:text-xs text-slate-500 mt-1 font-medium">
+                    {t.role}, <span className="text-slate-800 font-semibold">{t.company}</span>
                   </p>
                 </div>
               </div>

@@ -1,8 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import WhatWeCreate from './components/WhatWeCreate'
+import FeaturedProjects from './components/FeaturedProjects'
 import WhatWeDo from './components/WhatWeDo'
 import AudienceCarousel from './components/AudienceCarousel'
+import OurProcess from './components/OurProcess'
 import About from './components/About'
 import Clients from './components/Clients'
 import MissionVision from './components/MissionVision'
@@ -26,20 +29,29 @@ function HomePage() {
       {/* Hero Banner with video background */}
       <Hero />
 
+      {/* What We Create Section */}
+      <WhatWeCreate />
+
+      {/* Featured Projects Section */}
+      <FeaturedProjects />
+
       {/* Services / What We Do Section */}
       <WhatWeDo />
 
-      {/* Interactive 3D Audience Carousel */}
-      <AudienceCarousel />
+      {/* Mission, Vision & Core Values Section */}
+      <MissionVision />
 
       {/* Detailed About Section */}
       <About />
 
+      {/* Interactive 3D Audience Carousel */}
+      <AudienceCarousel />
+
+      {/* Our Process Section */}
+      <OurProcess />
+
       {/* Infinite scrolling Clients Marquee */}
       <Clients />
-
-      {/* Mission, Vision & Core Values Section */}
-      <MissionVision />
 
       {/* Client Testimonials Section */}
       <Testimonials />
